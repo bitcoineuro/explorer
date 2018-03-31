@@ -1,10 +1,30 @@
-Iquidus Explorer - 1.6.1
+Bitcoin Euro Explorer - 1.7.0
 ================
-
 An open source block explorer written in node.js.
+
+Here's a nice video showing how to install and deploy:   
+https://www.youtube.com/watch?v=laeV2slJgc8
+
+And here's a Pastebin with all the commands:   
+https://pastebin.com/SEYVXH2C
+
+Fork of Iquidus Explorer - 1.6.1  
+This is a fork made for Bitcoin Euro (BCE) (https://bitcoineuro.io)
+BCE is forked from Bitcoin at block 509110 (14 February 2018)
+The code of the original explorer shas been slightly adapted to
+start getting blocks and transactions at the forked block.
+There seems to be no need to get nine years of Bitcoin transactions first. This will take weeks if not months to collect.
+
+If you want to use this explorer for your own forked coin, add the following in settings.json apart from the regular settings as described below.
+
+  **"forkblock"**: set this to the block where the fork happened   
+  **"circulation"**: Set this value to the circulation of the source
+  coin at the time of the fork.   
+  *See https://blockchain.info/charts/total-bitcoins*
 
 ### See it in action
 
+*  [Bitcoin Euro](https://explorer.bitcoineuro.io)
 *  [Jumbucks](http://explorer.getjumbucks.com)
 *  [Sphere](http://sphere.iquidus.io)
 *  [SAR](http://explorer.sarcoin.info)
@@ -40,7 +60,7 @@ Create user with read/write access:
 
 ### Get the source
 
-    git clone https://github.com/iquidus/explorer explorer
+    git clone https://github.com/bitcoineuro/explorer explorer
 
 ### Install node modules
 

@@ -176,6 +176,10 @@ is_locked(function (exists) {
                       });
                     });
                   } else if (mode == 'update') {
+                    // Only get blocks greater than settings.forkblock + 1
+                    if (settings.forkblock && settings.forkblock + 1 > stats.last) {
+                      stats.last = settings.forkblock + 1;
+                    }
                     db.update_tx_db(settings.coin, stats.last, stats.count, settings.update_timeout, function(){
                       db.update_richlist('received', function(){
                         db.update_richlist('balance', function(){
