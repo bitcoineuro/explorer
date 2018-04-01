@@ -7,12 +7,18 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Index Script",
       "program": "${workspaceFolder}/scripts/sync.js",
       "args": [
         "index",
         "update"
       ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Main",
+      "program": "${workspaceFolder}/bin/instance.js"
     }
   ]
 }
