@@ -4,6 +4,7 @@ var express = require('express')
   , locale = require('../lib/locale')
   , db = require('../lib/database')
   , lib = require('../lib/explorer')
+  , _str = require('underscore.string')
   , qr = require('qr-image');
 
 function route_get_block(res, blockhash) {
@@ -306,7 +307,7 @@ router.get('/ext/summary', function(req, res) {
             res.send({ data: [{
               difficulty: difficulty,
               difficultyHybrid: difficultyHybrid,
-              supply: stats.supply + settings.circulation,
+              supply: _str.numberFormat(stats.supply + settings.circulation,0),
               hashrate: hashrate,
               lastPrice: stats.last_price,
               connections: connections,
