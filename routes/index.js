@@ -305,10 +305,10 @@ router.get('/ext/summary', function(req, res) {
               hashrate = 0;
             }
             res.send({ data: [{
-              difficulty: difficulty,
-              difficultyHybrid: difficultyHybrid,
+              difficulty: _str.numberFormat(difficulty,0),
+              difficultyHybrid: _str.numberFormat(difficultyHybrid,0),
               supply: _str.numberFormat(stats.supply + settings.circulation,0),
-              hashrate: hashrate,
+              hashrate: _str.numberFormat(hashrate,2),
               lastPrice: stats.last_price,
               connections: connections,
               blockcount: blockcount
